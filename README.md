@@ -17,3 +17,4 @@ Settings → Pages → Source: "Deploy from a branch" → branch `main`, pasta `
 
 - `index.html`: o site completo
 - `assets/`: logos (original, versão para fundo claro e versão para fundo escuro)
+- `tools/build-preview.py`: gera a versão de prévia com a logo embutida (`python3 tools/build-preview.py index.html saida.html`)
