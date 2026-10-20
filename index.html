@@ -645,22 +645,22 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
             <span class="hint" id="billHint">Use a média dos últimos meses da sua empresa.</span>
           </div>
           <div class="field">
-            <div class="range-row"><label for="disc">Desconto bruto negociado</label><output id="discOut" for="disc">25%</output></div>
-            <input type="range" id="disc" min="5" max="35" step="1" value="25">
-            <span class="hint">Exemplo. O percentual real sai da auditoria e da usina disponível para você.</span>
+            <div class="range-row"><label for="disc">Desconto bruto negociado</label><output id="discOut" for="disc">20%</output></div>
+            <input type="range" id="disc" min="5" max="20" step="1" value="20">
+            <span class="hint">Até 20%. O percentual real sai da auditoria e da usina disponível para você.</span>
           </div>
           <div class="fixed"><span>Remuneração da gestão Siriús</span><b>20% da economia</b></div>
         </div>
         <div class="panel rv d2" aria-live="polite">
           <div class="three">
-            <div><div class="lbl">Economia bruta</div><div class="v" id="oGross">R$ 2.000</div></div>
-            <div><div class="lbl">Gestão Siriús</div><div class="v" id="oFee">R$ 400</div></div>
-            <div class="hl" id="hlBox"><div class="lbl">Economia líquida para você</div><div class="v" id="oNet">R$ 1.600</div></div>
+            <div><div class="lbl">Economia bruta</div><div class="v" id="oGross">R$ 1.600</div></div>
+            <div><div class="lbl">Gestão Siriús</div><div class="v" id="oFee">R$ 320</div></div>
+            <div class="hl" id="hlBox"><div class="lbl">Economia líquida para você</div><div class="v" id="oNet">R$ 1.280</div></div>
           </div>
           <div class="bar-wrap">
-            <div class="bar-cap"><span>Sua fatura de hoje: <b class="num" id="oBill">R$ 8.000</b></span><span id="oPct">20% menor</span></div>
+            <div class="bar-cap"><span>Sua fatura de hoje: <b class="num" id="oBill">R$ 8.000</b></span><span id="oPct">16% menor</span></div>
             <div class="bar" role="img" id="bar" aria-label="">
-              <span class="seg-pay" id="sPay" style="width:75%"></span><span class="seg-fee" id="sFee" style="width:5%"></span><span class="seg-save" id="sSave" style="width:20%"></span>
+              <span class="seg-pay" id="sPay" style="width:80%"></span><span class="seg-fee" id="sFee" style="width:4%"></span><span class="seg-save" id="sSave" style="width:16%"></span>
             </div>
             <ul class="legend">
               <li><i class="seg-pay"></i>Custo de energia</li>
@@ -671,11 +671,11 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
           <div class="bills" aria-label="Como o valor pago se divide">
             <div class="boleto"><div class="lbl">Conta Enel</div><div class="v" id="bEnel">R$ 1.200</div></div>
             <div class="op">+</div>
-            <div class="boleto"><div class="lbl">Boleto contratual</div><div class="v" id="bCont">R$ 5.200</div></div>
+            <div class="boleto"><div class="lbl">Boleto contratual</div><div class="v" id="bCont">R$ 5.520</div></div>
             <div class="op">=</div>
-            <div class="boleto tot"><div class="lbl">Você paga</div><div class="v" id="bTot">R$ 6.400</div></div>
+            <div class="boleto tot"><div class="lbl">Você paga</div><div class="v" id="bTot">R$ 6.720</div></div>
           </div>
-          <div class="year"><span>Se o cenário se repetir por 12 meses</span><strong id="oYear">R$ 19.200</strong></div>
+          <div class="year"><span>Se o cenário se repetir por 12 meses</span><strong id="oYear">R$ 15.360</strong></div>
           <p class="disclaimer">Simulação hipotética. A divisão entre os dois boletos usa como exemplo 15% da fatura original na conta Enel. O valor real varia por unidade, grupo tarifário, impostos, demanda e créditos reconhecidos.</p>
         </div>
       </div>
