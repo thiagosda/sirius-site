@@ -30,6 +30,7 @@
   --navy:#a9c1ef; --gold:#d9ae55; --ok:#4fbf86; --warn:#e0a84a; --bad:#ef7a70; color-scheme:dark}
 
 *{box-sizing:border-box}
+a,button,input,select,summary,[role="button"]{-webkit-tap-highlight-color:transparent}
 img{max-width:100%}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -293,6 +294,9 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .dial .seg{fill:none;stroke:rgba(255,255,255,.1);stroke-width:46;cursor:pointer;transition:stroke .4s}
 .dial .seg.on{stroke:var(--gold-soft)}
 .dial .seg:hover{stroke:rgba(231,199,121,.45)}
+.dial .seg:focus{outline:none}
+.dial .seg:focus-visible{stroke:rgba(231,199,121,.7)}
+.dial svg{-webkit-tap-highlight-color:transparent}
 .dial .seg.on:hover{stroke:var(--gold-soft)}
 .dial .lbl{font:600 13px var(--f-mono);fill:var(--on-night-muted);letter-spacing:.1em;pointer-events:none;text-transform:uppercase}
 .dial .lbl.on{fill:#14213b}
