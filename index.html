@@ -205,7 +205,7 @@ a{color:inherit}
 .flip .in{display:block;position:relative;width:100%;height:100%;transition:transform .8s var(--ease);transform-style:preserve-3d}
 .flip.on .in{transform:rotateY(180deg)}
 .flip .face{position:absolute;gap:8px;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line)}
-.flip .f1{background:var(--surface)}
+.flip .f1{background:var(--surface);color:var(--ink)}
 .flip .f2{background:var(--navy);color:#f4f1e8;border-color:transparent;transform:rotateY(180deg)}
 :root[data-theme="dark"] .flip .f2{background:#011e48}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .flip .f2{background:#011e48}}
@@ -216,8 +216,6 @@ a{color:inherit}
 .flip .hint{font-size:.8rem;color:var(--muted)} .flip .f2 .hint{color:rgba(244,241,232,.65)}
 .law{margin-top:22px;color:var(--muted);font-size:.95rem}
 @media (max-width:1000px){.flips{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:620px){.flips{grid-template-columns:1fr 1fr}.flip{height:180px}}
-@media (max-width:400px){.flips{grid-template-columns:1fr}.flip{height:150px}}
 
 /* simulador */
 .sim{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:stretch}
@@ -287,12 +285,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .fatura.after li.comp .why{max-height:40px;opacity:1;color:#1f7a4d}
 .fatura .total{display:flex;justify-content:space-between;padding:14px 8px 0;font-weight:700}
 .fatura .total .val{font:700 1.2rem var(--f-mono)}
-.keeps-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0 0;padding:0;list-style:none}
-.keeps-list li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
-.keeps-list li::before{content:"";width:8px;height:8px;margin-top:9px;border-radius:2px;background:var(--gold);flex:none;transform:rotate(45deg)}
 @media (max-width:900px){.billbox{grid-template-columns:1fr;gap:36px}}
-@media (max-width:480px){.keeps-list{grid-template-columns:1fr}}
-
 /* ciclo mensal (dial) */
 .cyclebox{display:grid;grid-template-columns:420px 1fr;gap:64px;align-items:center}
 .dial{position:relative;width:100%;max-width:420px;aspect-ratio:1;margin:0 auto}
@@ -328,19 +321,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .answer .act{margin-top:22px;padding-top:18px;border-top:1px solid var(--night-line);display:grid;gap:6px}
 .answer .act b{color:var(--gold-soft);font-family:var(--f-display);font-stretch:112%;font-size:1.2rem}
 .answer.swap .body{animation:fade .5s var(--ease)}
-.plan{margin-top:96px}
-.timeline{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin:0;padding:0;list-style:none}
-.timeline::before{content:"";position:absolute;left:0;right:0;top:19px;height:2px;background:var(--night-line)}
-.timeline .fill{position:absolute;left:0;top:19px;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold-hot));transform-origin:left;transform:scaleX(var(--tp,0));transition:transform 2.2s var(--ease)}
-.timeline li{position:relative;display:grid;gap:8px;align-content:start}
-.timeline .dot{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--night);border:2px solid var(--night-line);font:600 .9rem var(--f-mono);color:var(--on-night-muted);position:relative;z-index:1;transition:all .4s var(--ease)}
-.timeline li.done .dot{border-color:var(--gold-soft);color:#14213b;background:var(--gold-soft)}
-.timeline b{font-weight:600}
-.timeline span{color:var(--on-night-muted);font-size:.92rem}
 .small-note{margin-top:22px;font-size:.92rem;color:var(--on-night-muted);max-width:70ch}
-@media (max-width:960px){.explorer{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr 1fr;row-gap:28px}.timeline::before,.timeline .fill{display:none}}
-@media (max-width:520px){.timeline{grid-template-columns:1fr}.timeline li{grid-template-columns:40px 1fr;column-gap:14px}.timeline .dot{grid-row:span 2}}
-
+@media (max-width:960px){.explorer{grid-template-columns:1fr}}
 /* adesão */
 .journey{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:0;padding:0;list-style:none}
 .journey li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:8px;align-content:start;transition:transform .35s var(--ease),border-color .35s}
@@ -388,18 +370,6 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .src{margin-top:16px;font-size:.82rem;color:var(--on-night-muted)}
 @media (max-width:800px){.stats{grid-template-columns:1fr}.stats > div + div{padding-left:0;border-left:0;border-top:1px solid var(--night-line)}}
 
-/* comparação */
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.cmp > div{border-radius:var(--r);padding:32px;border:1px solid var(--line);background:var(--surface)}
-.cmp > div.us{border:2px solid var(--gold);position:relative;overflow:hidden}
-.cmp > div.us::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;background:var(--gold);opacity:.12;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);animation:spin 20s linear infinite}
-.cmp h3{margin-bottom:18px;font-size:1.3rem}
-.cmp ul{margin:0;padding:0;list-style:none;display:grid;gap:12px;color:var(--muted)}
-.cmp li{display:flex;gap:12px}
-.cmp li svg{width:20px;height:20px;flex:none;margin-top:3px}
-.cmp .them svg{color:var(--muted)}
-.cmp .us ul{color:var(--ink)} .cmp .us svg{color:var(--ok)}
-@media (max-width:760px){.cmp{grid-template-columns:1fr}}
 
 /* faq */
 .faq{display:grid;gap:10px;max-width:880px}
@@ -457,6 +427,78 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
 .wa-float svg{width:26px;height:26px}
 .wa-float:hover{transform:translateY(-3px) scale(1.03)}
 @media (max-width:520px){.wa-float span{display:none}.wa-float{padding:15px}}
+
+/* segurança em faixa escura */
+.night .switch{background:rgba(255,255,255,.06);border-color:var(--night-line)}
+.night .switch button{color:var(--on-night-muted)}
+.night .switch button[aria-pressed="true"]{background:var(--gold-soft);color:#14213b}
+#seguranca .stats{margin-top:56px}
+.answer .small-note{margin-top:16px;font-size:.88rem}
+
+/* celular */
+@media (max-width:600px){
+  html{scroll-padding-top:70px}
+  body{font-size:16px}
+  .band{padding-block:60px}
+  .head{margin-bottom:30px}
+  .lead{font-size:1.05rem}
+  .top .wrap{min-height:64px}
+  .top .logo img{height:44px}
+  .nav{top:64px}
+  .hero{padding-block:36px 64px}
+  .hero h1{font-size:clamp(2rem,10.4vw,2.8rem);font-stretch:112%}
+  .hero .lead{font-size:1.05rem;margin-top:18px}
+  .hero-ctas{margin-top:26px}
+  .hero-ctas .btn{width:100%}
+  .hero-proof{margin-top:24px;gap:8px 18px;font-size:.9rem}
+  .halo{display:none}
+  .report{padding:20px;font-size:.88rem}
+  .front{padding:24px}
+  .front h3{font-size:1.3rem}
+  .node{width:64px;height:64px;border-radius:18px}
+  .node svg{width:30px;height:30px}
+  .flow li{grid-template-columns:64px 1fr}
+  .flow li .wire{top:64px;left:30px;height:34px}
+  .panel{padding:20px}
+  .chip{min-height:44px}
+  .three{grid-template-columns:1fr 1fr}
+  .three .hl{grid-column:1/-1}
+  .bills{grid-template-columns:1fr;gap:0;border:1px solid var(--line);border-radius:12px;padding:4px 14px}
+  .bills .op{display:none}
+  .boleto{display:flex;justify-content:space-between;align-items:baseline;border:0;border-bottom:1px dashed var(--line);border-radius:0;padding:10px 0}
+  .boleto.tot{border-bottom:0}
+  .boleto.tot .v{color:var(--gold)}
+  .year strong{font-size:1.6rem}
+  .dial{max-width:300px}
+  .cycle-copy .steps{display:none}
+  .cycle-copy{order:-1}
+  .explorer{margin-top:56px}
+  .answer{padding:22px;min-height:0}
+  .answer h3{font-size:1.35rem}
+  .events button{min-height:44px}
+  .check{padding:20px;margin-top:36px;gap:24px}
+  .ring{width:150px;height:150px}
+  .ring .pct{font-size:1.9rem}
+  .fatura{padding:18px}
+  .form{padding:20px}
+  .foot{padding-bottom:110px}
+  .foot ul{gap:4px}
+  .foot ul a{display:inline-block;padding:8px 0}
+  .stats > div{padding:24px 0}
+  .donut{gap:16px}
+  .donut svg{width:84px;height:84px}
+}
+/* fileiras deslizáveis no celular */
+.swipe-hint{display:none;font:500 .78rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+@media (max-width:760px){
+  .flips,.journey{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:max(20px,env(safe-area-inset-left,0px));gap:12px;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 14px;scrollbar-width:none}
+  .flips::-webkit-scrollbar,.journey::-webkit-scrollbar{display:none}
+  .flip{flex:0 0 72%;height:170px;scroll-snap-align:start}
+  .journey li{flex:0 0 72%;scroll-snap-align:start}
+  .journey li:last-child{grid-column:auto}
+  .swipe-hint{display:block}
+}
+.night .swipe-hint{color:var(--on-night-muted)}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -597,30 +639,6 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
     </div>
   </section>
 
-  <section class="band" style="background:var(--surface);border-block:1px solid var(--line)">
-    <div class="wrap">
-      <div class="head rv">
-        <p class="eyebrow">A pergunta mais importante</p>
-        <h2>Não é pirâmide. É compensação de energia regulada por lei.</h2>
-        <p class="lead">Toque em cada cartão para trocar o mito pela realidade.</p>
-      </div>
-      <div class="myth-bar rv">
-        <div class="switch" role="group" aria-label="Mostrar">
-          <button type="button" id="showMyth" aria-pressed="true">Mitos</button>
-          <button type="button" id="showReal" aria-pressed="false">Realidade</button>
-        </div>
-      </div>
-      <div class="flips" id="flips">
-        <button type="button" class="flip rv d1" aria-label="Mito: ganho por indicar pessoas. Realidade: usina renovável conectada à rede."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Ganho por indicar pessoas</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Usina renovável conectada à rede</span><span class="hint">Energia de verdade</span></span></span></button>
-        <button type="button" class="flip rv d2" aria-label="Mito: promessa de rendimento. Realidade: créditos medidos em kWh."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Promessa de rendimento</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Créditos medidos em kWh</span><span class="hint">Registrados pela distribuidora</span></span></span></button>
-        <button type="button" class="flip rv d3" aria-label="Mito: investimento em cadeia. Realidade: compensação registrada na fatura."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Investimento em cadeia</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Compensação registrada na fatura</span><span class="hint">Você confere na sua conta</span></span></span></button>
-        <button type="button" class="flip rv d4" aria-label="Mito: recrutamento obrigatório. Realidade: contrato com as unidades identificadas."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Recrutamento obrigatório</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Contrato com as unidades identificadas</span><span class="hint">Tudo por escrito</span></span></span></button>
-        <button type="button" class="flip rv d4" aria-label="Mito: dinheiro sem serviço real. Realidade: gestão mensal documentada."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Dinheiro sem serviço real</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Gestão mensal documentada</span><span class="hint">Relatório todo mês</span></span></span></button>
-      </div>
-      <p class="law rv">A Lei 14.300/2022 reconhece a geração compartilhada, e a ANEEL disciplina o Sistema de Compensação de Energia Elétrica (SCEE).</p>
-    </div>
-  </section>
-
   <section class="band" id="simulador">
     <div class="wrap">
       <div class="head rv">
@@ -682,24 +700,50 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
     </div>
   </section>
 
-  <section class="band" style="padding-top:0">
+  <section class="night band" id="seguranca">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="eyebrow">A pergunta mais importante</p>
+        <h2>Não é pirâmide. É compensação de energia regulada por lei.</h2>
+        <p class="lead">A Lei 14.300/2022 reconhece a geração compartilhada, e a ANEEL regula a compensação. Toque nos cartões para trocar o mito pela realidade.</p>
+      </div>
+      <div class="myth-bar rv">
+        <div class="switch" role="group" aria-label="Mostrar">
+          <button type="button" id="showMyth" aria-pressed="true">Mitos</button>
+          <button type="button" id="showReal" aria-pressed="false">Realidade</button>
+        </div>
+      </div>
+      <p class="swipe-hint" aria-hidden="true">Deslize para ver mais →</p>
+      <div class="flips" id="flips">
+        <button type="button" class="flip rv d1" aria-label="Mito: ganho por indicar pessoas. Realidade: usina renovável conectada à rede."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Ganho por indicar pessoas</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Usina renovável conectada à rede</span><span class="hint">Energia de verdade</span></span></span></button>
+        <button type="button" class="flip rv d2" aria-label="Mito: promessa de rendimento. Realidade: créditos medidos em kWh."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Promessa de rendimento</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Créditos medidos em kWh</span><span class="hint">Registrados pela distribuidora</span></span></span></button>
+        <button type="button" class="flip rv d3" aria-label="Mito: investimento em cadeia. Realidade: compensação registrada na fatura."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Investimento em cadeia</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Compensação registrada na fatura</span><span class="hint">Você confere na sua conta</span></span></span></button>
+        <button type="button" class="flip rv d4" aria-label="Mito: recrutamento obrigatório. Realidade: contrato com as unidades identificadas."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Recrutamento obrigatório</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Contrato com as unidades identificadas</span><span class="hint">Tudo por escrito</span></span></span></button>
+        <button type="button" class="flip rv d4" aria-label="Mito: dinheiro sem serviço real. Realidade: gestão mensal documentada."><span class="in"><span class="face f1"><span class="lab">Mito</span><span class="txt">Dinheiro sem serviço real</span><span class="hint">Toque para ver a realidade</span></span><span class="face f2"><span class="lab">Realidade</span><span class="txt">Gestão mensal documentada</span><span class="hint">Relatório todo mês</span></span></span></button>
+      </div>
+      <div class="stats rv" id="dados">
+        <div class="donut">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="a" cx="60" cy="60" r="48"/><circle class="b" id="donutB" cx="60" cy="60" r="48"/></svg>
+          <div><strong class="num" data-count="1.89" data-dec="2" data-suf=" mi">1,89 mi</strong><span>recebem pela geração compartilhada, 21,9% do total</span></div>
+        </div>
+        <div><strong class="num" data-count="8.63" data-dec="2" data-suf=" mi">8,63 mi</strong><span>unidades consumidoras com créditos, em todas as modalidades</span></div>
+        <div><strong class="num" data-count="54.1" data-dec="1" data-suf=" GW">54,1 GW</strong><span>de potência instalada em micro e minigeração</span></div>
+      </div>
+      <p class="src rv">Milhões de unidades já recebem créditos de energia no Brasil. Fonte: ANEEL, dados de 02/09/2026.</p>
+    </div>
+  </section>
+
+  <section class="band" id="conta-enel">
     <div class="wrap billbox">
       <div class="rv">
         <p class="eyebrow">Antes de aderir</p>
         <h2 style="margin-top:16px">O que continua na sua conta da Enel</h2>
-        <p class="lead" style="margin-top:16px">Economia não significa fatura zerada. Alguns itens são cobranças legítimas e permanecem. Veja a diferença na fatura ao lado.</p>
+        <p class="lead" style="margin-top:16px">Economia não significa fatura zerada. Alguns itens são cobranças legítimas e permanecem. Veja a diferença na fatura de exemplo.</p>
         <div class="switch" role="group" aria-label="Ver fatura" style="margin-top:26px">
           <button type="button" id="fBefore" aria-pressed="false">Hoje</button>
           <button type="button" id="fAfter" aria-pressed="true">Com Siriús</button>
         </div>
-        <ul class="keeps-list">
-          <li>Custo de disponibilidade (Grupo B)</li>
-          <li>Demanda contratada (Grupo A)</li>
-          <li>Tributos e encargos conforme regra</li>
-          <li>Consumo não coberto pelos créditos</li>
-          <li>Iluminação pública, quando aplicável</li>
-          <li>Bandeiras, saldo anterior e ajustes</li>
-        </ul>
+        <p class="hint" style="margin-top:20px;font-size:.95rem">Conforme o caso, também continuam: demanda contratada (Grupo A), consumo não coberto pelos créditos, bandeiras, saldo anterior e ajustes.</p>
       </div>
       <div class="fatura after rv d2" id="fatura" aria-live="polite">
         <div class="hd"><b>Fatura Enel · exemplo</b><span id="fTag">com créditos Siriús</span></div>
@@ -733,8 +777,8 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
 
       <div class="explorer">
         <div class="rv">
-          <p class="eyebrow">Cenários de exceção</p>
-          <h2 style="margin-top:16px;font-size:clamp(1.6rem,3vw,2.2rem)">E se algo der errado? Escolha um problema.</h2>
+          <p class="eyebrow">Se algo der errado</p>
+          <h2 style="margin-top:16px;font-size:clamp(1.6rem,3vw,2.2rem)">Escolha um problema e veja o que fazemos</h2>
           <div class="events" id="events" role="group" aria-label="Problemas comuns"></div>
         </div>
         <div class="answer rv d2" id="answer" aria-live="polite">
@@ -742,26 +786,10 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
             <span class="lab">O que aconteceu</span>
             <h3 id="aTitle">Sem crédito</h3>
             <p id="aDesc">A fatura chegou sem o crédito da usina.</p>
-            <div class="act"><span class="lab">O que a Siriús faz</span><b id="aAct">Valida rateio, leitura e abre protocolo</b></div>
+            <div class="act"><span class="lab">O que a Siriús faz</span><b id="aAct">Relatório com evidências, protocolo na Enel e, se persistir, ouvidoria e ANEEL</b></div>
+            <p class="small-note">Você continua pagando a Enel no vencimento. O prazo de correção é da distribuidora; nós acompanhamos até o ajuste aparecer na fatura.</p>
           </div>
         </div>
-      </div>
-
-      <div class="plan">
-        <div class="head rv" style="margin-bottom:36px">
-          <p class="eyebrow">Plano de resposta</p>
-          <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Se o crédito não aparecer, você não fica sem direção</h2>
-        </div>
-        <ol class="timeline" id="timeline">
-          <li><span class="dot">1</span><b>Você recebe a fatura</b><span>E paga no vencimento, para evitar juros e multa.</span></li>
-          <li><span class="dot">2</span><b>A Siriús compara</b><span>Geração, rateio, histórico e itens faturados.</span></li>
-          <li><span class="dot">3</span><b>Relatório enviado</b><span>Diferença, evidências e efeito no seu bolso.</span></li>
-          <li><span class="dot">4</span><b>Protocolo aberto</b><span>No canal da Enel, com número rastreável.</span></li>
-          <li><span class="dot">5</span><b>Caso escalado</b><span>Ouvidoria e, se persistir, ANEEL.</span></li>
-          <li><span class="dot">6</span><b>Correção conferida</b><span>Crédito ou ajuste real em fatura posterior.</span></li>
-          <span class="fill" aria-hidden="true"></span>
-        </ol>
-        <p class="small-note rv">Não prometemos correção no mês seguinte, porque o prazo é da distribuidora. Prometemos evidência, protocolo e acompanhamento até o fim.</p>
       </div>
     </div>
   </section>
@@ -772,6 +800,7 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
         <p class="eyebrow">Jornada de adesão</p>
         <h2>Você entra por etapas e acompanha cada uma</h2>
       </div>
+      <p class="swipe-hint" aria-hidden="true">Deslize para ver as etapas →</p>
       <ol class="journey">
         <li class="rv d1"><span class="n">Etapa 1</span><b>Documentos</b><p>12 faturas, CNPJ, contrato social, UC e representante.</p></li>
         <li class="rv d2"><span class="n">Etapa 2</span><b>Auditoria</b><p>Consumo, tarifa, inconsistências e perfil da unidade.</p></li>
@@ -793,55 +822,8 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
         </div>
         <div class="meter">
           <div class="ring"><svg viewBox="0 0 120 120"><circle class="bgc" cx="60" cy="60" r="50"/><circle class="fgc" id="ringFg" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="314.16"/></svg><div class="pct num" id="ringPct">0%</div></div>
-          <p id="ringMsg">Marque os itens ao lado para ver se a sua empresa já pode começar.</p>
+          <p id="ringMsg">Marque os itens para ver se a sua empresa já pode começar.</p>
           <a class="btn btn-gold" id="ringCta" href="#contato" hidden>Pedir minha auditoria</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="night band" style="padding-block:88px" id="dados">
-    <div class="wrap">
-      <div class="head rv" style="margin-bottom:36px">
-        <p class="eyebrow">Um modelo que já funciona no Brasil</p>
-        <h2>Milhões de unidades já recebem créditos de energia</h2>
-      </div>
-      <div class="stats rv">
-        <div class="donut">
-          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="a" cx="60" cy="60" r="48"/><circle class="b" id="donutB" cx="60" cy="60" r="48"/></svg>
-          <div><strong class="num" data-count="1.89" data-dec="2" data-suf=" mi">1,89 mi</strong><span>recebem pela geração compartilhada, 21,9% do total</span></div>
-        </div>
-        <div><strong class="num" data-count="8.63" data-dec="2" data-suf=" mi">8,63 mi</strong><span>unidades consumidoras com créditos, em todas as modalidades</span></div>
-        <div><strong class="num" data-count="54.1" data-dec="1" data-suf=" GW">54,1 GW</strong><span>de potência instalada em micro e minigeração</span></div>
-      </div>
-      <p class="src rv">Fonte: dados ANEEL de 02/09/2026. O modelo é difundido. O que diferencia uma boa contratação é transparência, elegibilidade, preço e gestão das exceções.</p>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="head rv">
-        <p class="eyebrow">Por que a Siriús</p>
-        <h2>O mercado já existe. A diferença está em quem acompanha a sua conta.</h2>
-      </div>
-      <div class="cmp">
-        <div class="them rv d1">
-          <h3>Modelo comum de energia por assinatura</h3>
-          <ul>
-            <li><svg><use href="#i-dash"/></svg>Operação nacional e atendimento em massa</li>
-            <li><svg><use href="#i-dash"/></svg>Desconto anunciado igual para todos</li>
-            <li><svg><use href="#i-dash"/></svg>Foco na venda e na adesão digital</li>
-            <li><svg><use href="#i-dash"/></svg>Pouca explicação do que continua na conta da distribuidora</li>
-          </ul>
-        </div>
-        <div class="us glow rv d2">
-          <h3>Siriús</h3>
-          <ul>
-            <li><svg><use href="#i-ok"/></svg>Diretoria local e atendimento direto</li>
-            <li><svg><use href="#i-ok"/></svg>Proposta personalizada a partir da auditoria das suas faturas</li>
-            <li><svg><use href="#i-ok"/></svg>Conferência mensal de cada fatura, com relatório</li>
-            <li><svg><use href="#i-ok"/></svg>Três números claros no contrato: desconto bruto, remuneração e economia líquida</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -856,10 +838,8 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
       <div class="faq rv">
         <details open><summary>Preciso instalar placas solares ou fazer obra?</summary><p>Não. A energia vem de uma usina parceira já conectada à rede. Nada é instalado no seu estabelecimento e a sua rede elétrica continua igual.</p></details>
         <details><summary>Quanto a Siriús cobra?</summary><p>20% sobre a economia apurada, nunca sobre o valor da fatura. Se a sua economia bruta em um mês for R$ 2.000, a gestão recebe R$ 400 e você fica com R$ 1.600.</p></details>
-        <details><summary>Minha conta da Enel vai zerar?</summary><p>Não necessariamente. Itens como custo de disponibilidade, demanda contratada, iluminação pública e tributos podem continuar. Você recebe essa explicação antes de assinar.</p></details>
+        <details><summary>Continuo cliente da Enel?</summary><p>Sim. Sua unidade continua ligada à Enel e você paga a conta dela normalmente, no vencimento. Os créditos da usina entram como compensação nessa mesma conta.</p></details>
         <details><summary>Por que vou receber dois boletos?</summary><p>Um é a conta da Enel, com os itens que continuam. O outro é o boleto contratual, com a parcela da usina e a gestão Siriús. A soma dos dois é menor que a sua conta de antes.</p></details>
-        <details><summary>E se o crédito não aparecer na fatura?</summary><p>Você paga a Enel no vencimento normalmente. Nós comparamos os dados, enviamos o relatório com a diferença e abrimos protocolo na distribuidora. Se não resolver, escalamos para a ouvidoria e para a ANEEL.</p></details>
-        <details><summary>Quem pode participar?</summary><p>Empresas com unidade consumidora na mesma área de distribuição da usina, com titularidade regular e, de preferência, 12 meses de histórico de faturas.</p></details>
         <details><summary>Quanto tempo leva para começar a economizar?</summary><p>Depende dos documentos, da capacidade da usina e do processamento pela distribuidora. O primeiro ciclo depois da ativação é monitorado de perto pela nossa equipe.</p></details>
       </div>
     </div>
@@ -1211,7 +1191,7 @@ document.querySelectorAll(".glow").forEach(c => c.addEventListener("pointermove"
 // explorador de problemas
 (function explorer() {
   const EV = [
-    ["Sem crédito", "A fatura chegou sem o crédito da usina.", "Valida rateio, leitura e abre protocolo"],
+    ["Sem crédito", "A fatura chegou sem o crédito da usina.", "Relatório com evidências, protocolo na Enel e, se persistir, ouvidoria e ANEEL"],
     ["Crédito parcial", "Veio menos crédito do que o previsto.", "Quantifica a diferença e o saldo"],
     ["Usina indisponível", "A usina parou de gerar por manutenção ou falha.", "Avisa, apresenta plano e possível realocação"],
     ["Consumo aumentou", "Sua empresa passou a gastar mais energia.", "Recalcula a alocação e a exposição"],
@@ -1232,15 +1212,6 @@ document.querySelectorAll(".glow").forEach(c => c.addEventListener("pointermove"
   });
 })();
 
-// linha do plano de resposta
-(function timeline() {
-  const tl = $("timeline"), items = [...tl.querySelectorAll("li")];
-  onView(tl, () => {
-    tl.style.setProperty("--tp", 1);
-    items.forEach((li, i) => setTimeout(() => li.classList.add("done"), RM ? 0 : 300 + i * 340));
-  });
-})();
-
 // checklist de elegibilidade
 (function checklist() {
   const boxes = [...$("checks").querySelectorAll("input")], fg = $("ringFg"), C = 314.16;
@@ -1248,7 +1219,7 @@ document.querySelectorAll(".glow").forEach(c => c.addEventListener("pointermove"
     const n = boxes.filter(b => b.checked).length, p = n / boxes.length;
     fg.style.strokeDashoffset = C * (1 - p); fg.classList.toggle("full", p === 1);
     $("ringPct").textContent = Math.round(p * 100) + "%";
-    $("ringMsg").textContent = p === 1 ? "Sua empresa já pode pedir a auditoria. Vamos começar?" : n ? `Faltam ${boxes.length - n} ${boxes.length - n === 1 ? "item" : "itens"}. A gente ajuda você a reunir o que falta.` : "Marque os itens ao lado para ver se a sua empresa já pode começar.";
+    $("ringMsg").textContent = p === 1 ? "Sua empresa já pode pedir a auditoria. Vamos começar?" : n ? `Faltam ${boxes.length - n} ${boxes.length - n === 1 ? "item" : "itens"}. A gente ajuda você a reunir o que falta.` : "Marque os itens para ver se a sua empresa já pode começar.";
     $("ringCta").hidden = n === 0;
   }
   boxes.forEach(b => b.addEventListener("change", upd));
