@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Siriús Inteligência Energética</title>
-<meta name="description" content="Auditoria de faturas e gestão de créditos de energia para empresas no Ceará. Economia sem instalar placas, com conferência mensal de cada fatura.">
+<meta name="description" content="Auditoria de faturas e gestão de créditos de energia para empresas e residências no Ceará. Economia sem instalar placas, com conferência mensal de cada fatura.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -558,10 +558,10 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
           <span class="w" style="animation-delay:.05s">Sua</span> <span class="w" style="animation-delay:.12s">conta</span> <span class="w" style="animation-delay:.19s">de</span> <span class="w" style="animation-delay:.26s">energia</span>
           <span class="w gold-text" style="animation-delay:.38s">explicada,</span> <span class="w gold-text" style="animation-delay:.48s">acompanhada</span> <span class="w gold-text" style="animation-delay:.58s">e</span> <span class="w gold-text" style="animation-delay:.64s">reduzida.</span>
         </h1>
-        <p class="lead">Auditoria de faturas e gestão de créditos de energia para empresas que querem pagar menos sem comprar nem instalar placas. Cada fatura é conferida todos os meses.</p>
+        <p class="lead">Auditoria de faturas e gestão de créditos de energia para empresas e residências que querem pagar menos sem comprar nem instalar placas. Cada fatura é conferida todos os meses.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#simulador">Simular minha economia</a>
-          <a class="btn btn-ghost js-wa" href="#contato" data-msg="Olá! Quero entender quanto minha empresa pode economizar na conta de energia."><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+          <a class="btn btn-ghost js-wa" href="#contato" data-msg="Olá! Quero entender quanto posso economizar na conta de energia."><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
         </div>
         <ul class="hero-proof">
           <li><svg><use href="#i-star"/></svg>Sem obra e sem investimento</li>
@@ -653,8 +653,9 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
       <div class="sim">
         <div class="panel rv d1">
           <div class="field">
-            <span class="lbl2">Exemplos de empresas</span>
+            <span class="lbl2">Exemplos de contas</span>
             <div class="chips" id="chips">
+              <button type="button" class="chip" data-v="600" aria-pressed="false">Casa · R$ 600</button>
               <button type="button" class="chip" data-v="3000" aria-pressed="false">Padaria · R$ 3 mil</button>
               <button type="button" class="chip" data-v="8000" aria-pressed="true">Clínica · R$ 8 mil</button>
               <button type="button" class="chip" data-v="15000" aria-pressed="false">Restaurante · R$ 15 mil</button>
@@ -664,7 +665,7 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
           <div class="field">
             <label for="bill">Valor médio da fatura de energia</label>
             <div class="money"><span>R$</span><input id="bill" inputmode="numeric" autocomplete="off" value="8.000" aria-describedby="billHint"></div>
-            <span class="hint" id="billHint">Use a média dos últimos meses da sua empresa.</span>
+            <span class="hint" id="billHint">Use a média dos últimos meses.</span>
           </div>
           <div class="field">
             <div class="range-row"><label for="disc">Desconto bruto negociado</label><output id="discOut" for="disc">20%</output></div>
@@ -806,7 +807,7 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
       </div>
       <p class="swipe-hint" aria-hidden="true">Deslize para ver as etapas →</p>
       <ol class="journey">
-        <li class="rv d1"><span class="n">Etapa 1</span><b>Documentos</b><p>12 faturas, CNPJ, contrato social, UC e representante.</p></li>
+        <li class="rv d1"><span class="n">Etapa 1</span><b>Documentos</b><p>Últimas faturas, CPF ou CNPJ do titular e dados da unidade.</p></li>
         <li class="rv d2"><span class="n">Etapa 2</span><b>Auditoria</b><p>Consumo, tarifa, inconsistências e perfil da unidade.</p></li>
         <li class="rv d3"><span class="n">Etapa 3</span><b>Proposta</b><p>Desconto, remuneração, base e os dois boletos explicados.</p></li>
         <li class="rv d4"><span class="n">Etapa 4</span><b>Contratos</b><p>Contrato-base, aditivos, LGPD e autorização.</p></li>
@@ -815,18 +816,17 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
 
       <div class="check rv">
         <div>
-          <h3 style="font-size:1.5rem">Sua empresa está pronta para a auditoria?</h3>
+          <h3 style="font-size:1.5rem">Você está pronto para a auditoria?</h3>
           <p class="hint" style="margin:8px 0 20px;font-size:.95rem">Marque o que você já tem.</p>
           <ul id="checks">
             <li><label><input type="checkbox" id="c1"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>Unidade na área da Enel Ceará</b><span class="s">Usina e unidade precisam estar na mesma distribuidora.</span></span></label></li>
-            <li><label><input type="checkbox" id="c2"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>Conta no CNPJ da empresa</b><span class="s">Titularidade regular, com contrato social e representante.</span></span></label></li>
-            <li><label><input type="checkbox" id="c3"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>Faturas dos últimos 12 meses</b><span class="s">Para medir consumo e sazonalidade.</span></span></label></li>
-            <li><label><input type="checkbox" id="c4"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>Conta acima de R$ 1.000 por mês</b><span class="s">Para a economia compensar o processo.</span></span></label></li>
+            <li><label><input type="checkbox" id="c2"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>Conta no seu nome ou da sua empresa</b><span class="s">Pessoa física ou jurídica, com a titularidade regular.</span></span></label></li>
+            <li><label><input type="checkbox" id="c3"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>Faturas dos últimos 12 meses</b><span class="s">Ajudam a medir consumo e sazonalidade. Se não tiver todas, a gente ajuda a buscar.</span></span></label></li>
           </ul>
         </div>
         <div class="meter">
           <div class="ring"><svg viewBox="0 0 120 120"><circle class="bgc" cx="60" cy="60" r="50"/><circle class="fgc" id="ringFg" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="314.16"/></svg><div class="pct num" id="ringPct">0%</div></div>
-          <p id="ringMsg">Marque os itens para ver se a sua empresa já pode começar.</p>
+          <p id="ringMsg">Marque os itens para ver se você já pode começar.</p>
           <a class="btn btn-gold" id="ringCta" href="#contato" hidden>Pedir minha auditoria</a>
         </div>
       </div>
@@ -857,7 +857,7 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
         <h2 style="margin-top:16px">Autorize a auditoria das suas últimas 12 faturas</h2>
         <p class="lead">Você recebe uma proposta personalizada, com os três números claros, antes de assinar qualquer coisa.</p>
         <div class="channels">
-          <a class="channel js-wa" href="#contato" data-msg="Olá! Quero pedir a auditoria das faturas de energia da minha empresa."><svg><use href="#i-wa"/></svg><div><b>WhatsApp</b><span class="js-wa-label"><span class="todo">número a definir</span></span></div></a>
+          <a class="channel js-wa" href="#contato" data-msg="Olá! Quero pedir a auditoria das minhas faturas de energia."><svg><use href="#i-wa"/></svg><div><b>WhatsApp</b><span class="js-wa-label"><span class="todo">número a definir</span></span></div></a>
           <div class="channel"><svg><use href="#i-mail"/></svg><div><b>E-mail</b><span><span class="todo">e-mail a definir</span></span></div></div>
           <div class="channel"><svg><use href="#i-pin"/></svg><div><b>Atendimento local</b><span>Fortaleza, Ceará · <span class="todo">endereço a definir</span></span></div></div>
         </div>
@@ -865,7 +865,7 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
 
       <form class="form rv d2" id="leadForm" novalidate>
         <label>Seu nome<input id="fName" name="nome" autocomplete="name" required></label>
-        <label>Empresa<input id="fCompany" name="empresa" autocomplete="organization" required></label>
+        <label>Empresa (opcional)<input id="fCompany" name="empresa" autocomplete="organization"></label>
         <label>WhatsApp<input id="fPhone" name="telefone" inputmode="tel" autocomplete="tel" placeholder="(85) 9 0000-0000" required></label>
         <label>E-mail<input id="fEmail" name="email" type="email" autocomplete="email"></label>
         <label>Valor médio da fatura
@@ -904,7 +904,7 @@ a.channel:hover{border-color:var(--gold-soft);transform:translateX(6px)}
     <div class="foot-grid">
       <div style="display:grid;gap:16px;align-content:start">
         <img src="assets/logo-sirius-claro.png" alt="Siriús Inteligência Energética" width="640" height="230">
-        <p>Auditoria de faturas e gestão de créditos de energia para empresas.</p>
+        <p>Auditoria de faturas e gestão de créditos de energia para empresas e residências.</p>
         <p>CNPJ: <span class="todo">a definir</span></p>
       </div>
       <div>
@@ -1198,8 +1198,8 @@ document.querySelectorAll(".glow").forEach(c => c.addEventListener("pointermove"
     ["Sem crédito", "A fatura chegou sem o crédito da usina.", "Relatório com evidências, protocolo na Enel e, se persistir, ouvidoria e ANEEL"],
     ["Crédito parcial", "Veio menos crédito do que o previsto.", "Quantifica a diferença e o saldo"],
     ["Usina indisponível", "A usina parou de gerar por manutenção ou falha.", "Avisa, apresenta plano e possível realocação"],
-    ["Consumo aumentou", "Sua empresa passou a gastar mais energia.", "Recalcula a alocação e a exposição"],
-    ["Consumo caiu", "Sua empresa passou a gastar menos energia.", "Evita crédito ocioso e ajusta o rateio"],
+    ["Consumo aumentou", "Você passou a gastar mais energia.", "Recalcula a alocação e a exposição"],
+    ["Consumo caiu", "Você passou a gastar menos energia.", "Evita crédito ocioso e ajusta o rateio"],
     ["Mudou titular", "A conta mudou de titular ou de endereço.", "Para e regulariza antes de seguir"],
     ["Fatura atrasada", "Um pagamento ficou em atraso.", "Aplica o semáforo verde, amarelo e vermelho, com prazo de cura"],
     ["Tarifa mudou", "A distribuidora reajustou a tarifa.", "Refaz a simulação e explica o impacto"]
@@ -1223,7 +1223,7 @@ document.querySelectorAll(".glow").forEach(c => c.addEventListener("pointermove"
     const n = boxes.filter(b => b.checked).length, p = n / boxes.length;
     fg.style.strokeDashoffset = C * (1 - p); fg.classList.toggle("full", p === 1);
     $("ringPct").textContent = Math.round(p * 100) + "%";
-    $("ringMsg").textContent = p === 1 ? "Sua empresa já pode pedir a auditoria. Vamos começar?" : n ? `Faltam ${boxes.length - n} ${boxes.length - n === 1 ? "item" : "itens"}. A gente ajuda você a reunir o que falta.` : "Marque os itens para ver se a sua empresa já pode começar.";
+    $("ringMsg").textContent = p === 1 ? "Você já pode pedir a auditoria. Vamos começar?" : n ? `Faltam ${boxes.length - n} ${boxes.length - n === 1 ? "item" : "itens"}. A gente ajuda você a reunir o que falta.` : "Marque os itens para ver se você já pode começar.";
     $("ringCta").hidden = n === 0;
   }
   boxes.forEach(b => b.addEventListener("change", upd));
@@ -1252,14 +1252,14 @@ onView($("dados"), () => {
 // formulário: monta a mensagem para o WhatsApp
 $("leadForm").addEventListener("submit", e => {
   e.preventDefault();
-  const req = ["fName", "fCompany", "fPhone"].map($);
+  const req = ["fName", "fPhone"].map($);
   const missing = req.filter(i => !i.value.trim());
   req.forEach(i => { i.classList.remove("bad"); if (missing.includes(i)) { void i.offsetWidth; i.classList.add("bad"); } });
   if (missing.length) { missing[0].focus(); return; }
   const lines = [
     "Olá! Quero pedir a auditoria das faturas de energia.",
     "Nome: " + $("fName").value.trim(),
-    "Empresa: " + $("fCompany").value.trim(),
+    $("fCompany").value.trim() ? "Empresa: " + $("fCompany").value.trim() : "",
     "WhatsApp: " + $("fPhone").value.trim(),
     $("fEmail").value.trim() ? "E-mail: " + $("fEmail").value.trim() : "",
     "Fatura média: " + $("fBill").value,
